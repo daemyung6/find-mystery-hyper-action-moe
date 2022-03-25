@@ -1,0 +1,3 @@
++MapsToCook=(FilePath="/Game/1/Map/test")
++MapsToCook=(FilePath="/Game/1/Map/test2")
++MapsToCook=(FilePath="/Game/4/Map/test")
