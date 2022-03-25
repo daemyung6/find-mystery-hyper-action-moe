@@ -1,5 +1,4 @@
 const fs = require('fs');
-const { setFlagsFromString } = require('v8');
 const config = require('./config.js');
 
 let fileNameListStr  = "";
@@ -13,7 +12,11 @@ function findindir(root) {
     if(patharr[patharr.length - 1].indexOf('.') != -1) {
         console.log(root, "is file");
 
-        if(patharr[patharr.length - 2] === 'Map') {
+        if(
+            (patharr.indexOf('Map') !== -1) &&
+            (root.indexOf('BuiltData') === -1) &&
+            (root.indexOf('__ExternalActors__') === -1)
+        ) {
             root = root.substr(config.rootPath.length);
             root = root.split('.')[0];
             root = `+MapsToCook=(FilePath="/Game${root}")` + "\n";
